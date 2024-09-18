@@ -1,0 +1,136 @@
+/* Created by Tivotal */
+
+/* Google Fonts(Poppins) */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #222;
+}
+
+.btn {
+  position: relative;
+  width: 220px;
+  height: 70px;
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  color: #000;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.btn:active {
+  transform: scale(0.9);
+}
+
+.btn span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  font-size: 20px;
+  font-weight: 600;
+  text-wrap: nowrap;
+  z-index: 3;
+}
+
+.btn.clicked .add {
+  animation: txt1Anim 1.5s ease-in-out forwards;
+}
+
+@keyframes txt1Anim {
+  0% {
+    opacity: 1;
+  }
+  20%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.cart {
+  position: absolute;
+  top: 50%;
+  left: -10%;
+  transform: translate(-50%, -50%);
+  font-size: 35px;
+  z-index: 2;
+}
+
+.btn.clicked .cart {
+  animation: cartAnim 1.5s ease-in-out forwards;
+}
+
+@keyframes cartAnim {
+  0% {
+    left: -10%;
+  }
+  40%,
+  60% {
+    left: 50%;
+  }
+  100% {
+    left: 110%;
+  }
+}
+
+.shirt {
+  position: absolute;
+  top: -20%;
+  left: 52%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  z-index: 3;
+}
+
+.btn.clicked .shirt {
+  animation: shirtAnim 1.5s ease-in-out forwards;
+}
+
+@keyframes shirtAnim {
+  0%,
+  40% {
+    top: -20%;
+  }
+  60% {
+    top: 40%;
+    left: 52%;
+  }
+  100% {
+    top: 40%;
+    left: 112%;
+  }
+}
+
+.btn span.added {
+  color: #3f7d05;
+  opacity: 0;
+}
+
+.btn.clicked .added {
+  animation: txt2Anim 1.5s ease-in-out forwards;
+}
+
+@keyframes txt2Anim {
+  0%,
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
